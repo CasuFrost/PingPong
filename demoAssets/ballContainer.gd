@@ -2,6 +2,7 @@ extends Node2D
 onready var scia = get_parent().get_node("SciaPalla")
 onready var cloudyExp = get_parent().get_node("CloudyExplosion")
 onready var enemy = get_parent().get_node("Gerry")
+onready var adMob = get_parent().get_node("AdMob")
 var s=0
 var r=0
 var points = 0
@@ -73,6 +74,7 @@ func _physics_process(delta):
 		position.y+=speed
 		position.x+=r
 		if position.y>1400: #Player loose
+			adMob.show_banner()
 			enemy.get_node("laugh").play()
 			enemy.get_node("flaoting").play("float and laugh")
 			enemy.play("Laugh")
@@ -158,6 +160,7 @@ func save_points(points):
 
 
 func _on_Restart_Button_button_down():
+	#adMob.hide_banner()
 	enemy.get_node("flaoting").play("float")
 	enemy.play("idle")
 	enemy.z_index=0

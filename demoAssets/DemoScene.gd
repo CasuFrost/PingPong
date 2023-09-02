@@ -4,10 +4,11 @@ var pause = false
 var colorSkye : Color = Color(0.6,0.8,0.8,1)
 var colorSkyeDark : Color = Color(0.2,0.2,0.3,1)
 var colorSelector=1
-
+onready var adMob = $AdMob
 var dir =str(OS.get_user_data_dir())+"/game_save.tres"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	get_node("LoseMenù").visible=false
 	$player/demoAsset.material.set_shader_param("color",Color(0.5,0.5,1))
 	dir = str(OS.get_user_data_dir())+"/game_save.tres"

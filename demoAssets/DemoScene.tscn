@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://demoAssets/demoTable.png" type="Texture" id=1]
 [ext_resource path="res://demoAssets/demoBall.png" type="Texture" id=2]
@@ -58,6 +58,7 @@
 [ext_resource path="res://demoAssets/reBoundInverse/4.png" type="Texture" id=56]
 [ext_resource path="res://demoAssets/laugh/1.png" type="Texture" id=57]
 [ext_resource path="res://SoundEffect/evil laugh.wav" type="AudioStream" id=58]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=59]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -122,7 +123,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0.447, 0.447 ) ]
 }
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=3]
 resource_name = "float and laugh"
 length = 3.0
 loop = true
@@ -163,18 +164,18 @@ tracks/2/keys = {
 "values": [ Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ), Vector2( 0.447, 0.447 ), Vector2( 0.468, 0.468 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 679.451, 104.374 )
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=5]
 
-[sub_resource type="Curve" id=5]
+[sub_resource type="Curve" id=6]
 _data = [ Vector2( 0.0388889, 0.0818182 ), 0.0, 0.0, 0, 0, Vector2( 0.538889, 0.654545 ), 1.35584, 1.35584, 0, 0, Vector2( 0.966667, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=7]
 colors = PoolColorArray( 1, 0.819608, 0.482353, 0.0470588, 1, 1, 1, 0.819608 )
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
 render_mode unshaded;
 
@@ -215,8 +216,8 @@ void fragment()
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=8]
-shader = SubResource( 7 )
+[sub_resource type="ShaderMaterial" id=9]
+shader = SubResource( 8 )
 shader_param/Smooth = true
 shader_param/width = 23.813
 shader_param/outline_color = Color( 1, 0.843137, 0.619608, 1 )
@@ -224,10 +225,10 @@ shader_param/pixel_size = 2
 shader_param/width_speed = 10.0
 shader_param/glow = true
 
-[sub_resource type="CircleShape2D" id=9]
+[sub_resource type="CircleShape2D" id=10]
 radius = 18.3591
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.2
 step = 0.0
 tracks/0/type = "value"
@@ -267,7 +268,7 @@ tracks/2/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="Shader" id=11]
+[sub_resource type="Shader" id=12]
 code = "shader_type canvas_item;
 render_mode unshaded;
 
@@ -308,8 +309,8 @@ void fragment()
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=12]
-shader = SubResource( 11 )
+[sub_resource type="ShaderMaterial" id=13]
+shader = SubResource( 12 )
 shader_param/Smooth = true
 shader_param/width = 0.0
 shader_param/outline_color = Color( 1, 1, 1, 1 )
@@ -317,33 +318,33 @@ shader_param/pixel_size = 4
 shader_param/width_speed = 1.0
 shader_param/glow = true
 
-[sub_resource type="Curve" id=13]
+[sub_resource type="Curve" id=14]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=14]
-curve = SubResource( 13 )
+[sub_resource type="CurveTexture" id=15]
+curve = SubResource( 14 )
 
-[sub_resource type="ParticlesMaterial" id=15]
+[sub_resource type="ParticlesMaterial" id=16]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 14 )
+scale_curve = SubResource( 15 )
 color = Color( 1, 1, 1, 0.101961 )
 
-[sub_resource type="Gradient" id=16]
+[sub_resource type="Gradient" id=17]
 colors = PoolColorArray( 0.929412, 0.717647, 0.396078, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=17]
-gradient = SubResource( 16 )
+[sub_resource type="GradientTexture" id=18]
+gradient = SubResource( 17 )
 
-[sub_resource type="Curve" id=18]
+[sub_resource type="Curve" id=19]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.638158, 0.654545 ), -1.0457, -1.0457, 0, 0, Vector2( 1, 0.0272727 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=19]
-curve = SubResource( 18 )
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
 
-[sub_resource type="ParticlesMaterial" id=20]
+[sub_resource type="ParticlesMaterial" id=21]
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
@@ -352,30 +353,30 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
 tangential_accel = 95.35
-scale_curve = SubResource( 19 )
-color_ramp = SubResource( 17 )
+scale_curve = SubResource( 20 )
+color_ramp = SubResource( 18 )
 
-[sub_resource type="CanvasItemMaterial" id=21]
+[sub_resource type="CanvasItemMaterial" id=22]
 blend_mode = 1
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Gradient" id=22]
+[sub_resource type="Gradient" id=23]
 offsets = PoolRealArray( 0, 0.527132, 0.96124 )
 colors = PoolColorArray( 0.27451, 0.870588, 1, 1, 1, 1, 1, 0.466667, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=23]
-gradient = SubResource( 22 )
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
 
-[sub_resource type="Curve" id=24]
+[sub_resource type="Curve" id=25]
 _data = [ Vector2( 0.0197368, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263158, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.335526, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=25]
-curve = SubResource( 24 )
+[sub_resource type="CurveTexture" id=26]
+curve = SubResource( 25 )
 
-[sub_resource type="ParticlesMaterial" id=26]
+[sub_resource type="ParticlesMaterial" id=27]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 orbit_velocity = 0.0
@@ -383,12 +384,12 @@ orbit_velocity_random = 0.0
 angle = 360.0
 angle_random = 1.0
 scale = 0.46
-scale_curve = SubResource( 25 )
-color_ramp = SubResource( 23 )
+scale_curve = SubResource( 26 )
+color_ramp = SubResource( 24 )
 anim_offset = 1.0
 anim_offset_random = 1.0
 
-[sub_resource type="SpriteFrames" id=27]
+[sub_resource type="SpriteFrames" id=28]
 animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
@@ -411,13 +412,13 @@ animations = [ {
 "speed": 9.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 10, 11.5055 )
-
 [sub_resource type="RectangleShape2D" id=29]
 extents = Vector2( 10, 11.5055 )
 
-[sub_resource type="Shader" id=30]
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 10, 11.5055 )
+
+[sub_resource type="Shader" id=31]
 code = "shader_type canvas_item;
 uniform vec4 color : hint_color; 
 uniform bool Active; 
@@ -430,12 +431,12 @@ void fragment(){
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id=31]
-shader = SubResource( 30 )
+[sub_resource type="ShaderMaterial" id=32]
+shader = SubResource( 31 )
 shader_param/color = Color( 0.494118, 0.858824, 1, 1 )
 shader_param/Active = false
 
-[sub_resource type="SpriteFrames" id=32]
+[sub_resource type="SpriteFrames" id=33]
 animations = [ {
 "frames": [ ExtResource( 19 ) ],
 "loop": true,
@@ -462,11 +463,6 @@ animations = [ {
 "name": "r2",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "l2",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "l",
@@ -476,15 +472,20 @@ animations = [ {
 "loop": true,
 "name": "goRight",
 "speed": 9.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "l2",
+"speed": 12.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=33]
+[sub_resource type="RectangleShape2D" id=34]
 extents = Vector2( 291.259, 39.9595 )
 
-[sub_resource type="RectangleShape2D" id=34]
+[sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 266.871, 20.6402 )
 
-[sub_resource type="CircleShape2D" id=35]
+[sub_resource type="CircleShape2D" id=36]
 radius = 126.198
 
 [sub_resource type="DynamicFont" id=37]
@@ -543,7 +544,7 @@ size = 60
 use_mipmaps = true
 font_data = ExtResource( 37 )
 
-[sub_resource type="DynamicFont" id=44]
+[sub_resource type="DynamicFont" id=43]
 size = 90
 outline_size = 2
 outline_color = Color( 0.329412, 0.909804, 0.721569, 1 )
@@ -551,7 +552,7 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 37 )
 
-[sub_resource type="DynamicFont" id=43]
+[sub_resource type="DynamicFont" id=44]
 size = 90
 outline_size = 2
 outline_color = Color( 0.145098, 0.227451, 0.0509804, 1 )
@@ -590,13 +591,12 @@ position = Vector2( 538.364, 382.589 )
 scale = Vector2( 0.447, 0.447 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 
 [node name="flaoting" type="AnimationPlayer" parent="Gerry"]
 autoplay = "float"
 anims/float = SubResource( 2 )
-"anims/float and laugh" = SubResource( 45 )
+"anims/float and laugh" = SubResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="Gerry"]
 scale = Vector2( 14.269, 14.269 )
@@ -622,13 +622,13 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 250 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Table/hitArea"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="SciaPalla" type="Line2D" parent="."]
-material = SubResource( 4 )
+material = SubResource( 5 )
 width = 20.0
-width_curve = SubResource( 5 )
-gradient = SubResource( 6 )
+width_curve = SubResource( 6 )
+gradient = SubResource( 7 )
 joint_mode = 2
 begin_cap_mode = 2
 end_cap_mode = 2
@@ -652,7 +652,7 @@ texture = ExtResource( 14 )
 
 [node name="Ball" type="Sprite" parent="ballContainer"]
 visible = false
-material = SubResource( 8 )
+material = SubResource( 9 )
 position = Vector2( -1.59003, -1.54083 )
 texture = ExtResource( 2 )
 
@@ -660,16 +660,16 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ballContainer/Ball/ball"]
 visible = false
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ballContainer/Ball"]
-anims/rimb = SubResource( 10 )
+anims/rimb = SubResource( 11 )
 
 [node name="BallOnTable" type="AudioStreamPlayer" parent="ballContainer"]
 stream = ExtResource( 15 )
 
 [node name="BallNew" type="Sprite" parent="ballContainer"]
-material = SubResource( 12 )
+material = SubResource( 13 )
 position = Vector2( -1.47583, -2.19824 )
 scale = Vector2( 0.103, 0.103 )
 texture = ExtResource( 18 )
@@ -679,7 +679,7 @@ position = Vector2( -1.59006, -1.54083 )
 emitting = false
 amount = 6
 local_coords = false
-process_material = SubResource( 15 )
+process_material = SubResource( 16 )
 texture = ExtResource( 2 )
 
 [node name="sparkles" type="Particles2D" parent="ballContainer"]
@@ -688,7 +688,7 @@ amount = 45
 lifetime = 0.64
 explosiveness = 0.01
 local_coords = false
-process_material = SubResource( 20 )
+process_material = SubResource( 21 )
 texture = ExtResource( 24 )
 
 [node name="PossiblePosition" type="Node2D" parent="."]
@@ -721,11 +721,11 @@ position = Vector2( 780, 384.805 )
 position = Vector2( 540, 384.805 )
 
 [node name="hitBallEffect" type="Particles2D" parent="."]
-material = SubResource( 21 )
+material = SubResource( 22 )
 position = Vector2( -321.34, 1003.28 )
 amount = 10
 lifetime = 0.3
-process_material = SubResource( 26 )
+process_material = SubResource( 27 )
 texture = ExtResource( 39 )
 
 [node name="Timer" type="Timer" parent="hitBallEffect"]
@@ -736,7 +736,7 @@ one_shot = true
 modulate = Color( 0.517647, 0.517647, 0.517647, 1 )
 position = Vector2( 525.862, 1115.01 )
 scale = Vector2( 6, 6 )
-frames = SubResource( 27 )
+frames = SubResource( 28 )
 animation = "New Anim"
 playing = true
 script = ExtResource( 5 )
@@ -751,7 +751,7 @@ scale = Vector2( 0.0833333, 0.0448117 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player/left"]
 position = Vector2( -150, -48.944 )
 scale = Vector2( 14.302, 38.448 )
-shape = SubResource( 28 )
+shape = SubResource( 29 )
 
 [node name="right" type="Area2D" parent="player" groups=[
 "PlyaerR",
@@ -766,7 +766,7 @@ scale = Vector2( 0.0833333, 0.0448117 )
 ]]
 position = Vector2( 150, -48.944 )
 scale = Vector2( 14.302, 38.448 )
-shape = SubResource( 29 )
+shape = SubResource( 30 )
 
 [node name="Timer" type="Timer" parent="player"]
 wait_time = 0.3
@@ -776,12 +776,11 @@ one_shot = true
 stream = ExtResource( 16 )
 
 [node name="demoAsset" type="AnimatedSprite" parent="player"]
-material = SubResource( 31 )
+material = SubResource( 32 )
 position = Vector2( -4.426, 12.1388 )
 scale = Vector2( 0.137, 0.137 )
-frames = SubResource( 32 )
+frames = SubResource( 33 )
 animation = "l2"
-frame = 2
 playing = true
 
 [node name="RacketSwoosh" type="AudioStreamPlayer2D" parent="player"]
@@ -796,7 +795,7 @@ position = Vector2( 536.394, 761.466 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rimbalzoNemico"]
 position = Vector2( 1.498, -2.182 )
-shape = SubResource( 33 )
+shape = SubResource( 34 )
 
 [node name="rimbalzo" type="Area2D" parent="." groups=[
 "rimb",
@@ -804,7 +803,7 @@ shape = SubResource( 33 )
 position = Vector2( 541.027, 664.497 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rimbalzo"]
-shape = SubResource( 34 )
+shape = SubResource( 35 )
 
 [node name="Joystick" type="Area2D" parent="."]
 visible = false
@@ -824,7 +823,7 @@ texture = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Joystick"]
 position = Vector2( 0.949768, 47.0333 )
-shape = SubResource( 35 )
+shape = SubResource( 36 )
 
 [node name="l" type="TouchScreenButton" parent="."]
 visible = false
@@ -1046,7 +1045,7 @@ margin_top = -129.64
 margin_right = 358.667
 margin_bottom = 1428.36
 rect_scale = Vector2( 0.858, 0.858 )
-custom_fonts/font = SubResource( 44 )
+custom_fonts/font = SubResource( 43 )
 custom_colors/font_color = Color( 0.94902, 0.917647, 0.341176, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "Score : 12"
@@ -1065,13 +1064,18 @@ margin_top = -5.5
 margin_right = 262.167
 margin_bottom = 83.5
 rect_scale = Vector2( 0.858, 0.858 )
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 44 )
 custom_colors/font_color_disabled = Color( 0.0392157, 0.184314, 0, 1 )
 custom_colors/font_color = Color( 0.615686, 0.858824, 0.352941, 1 )
 text = "Try again"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 59 )
+banner_on_top = false
+banner_id = "ca-app-pub-3940256099942544/9214589741"
 
 [connection signal="animation_finished" from="Gerry" to="." method="_on_Gerry_animation_finished"]
 [connection signal="area_entered" from="ballContainer/Ball/ball" to="ballContainer" method="_on_ball_area_entered"]
