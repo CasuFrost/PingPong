@@ -74,7 +74,7 @@ func _physics_process(delta):
 		position.y+=speed
 		position.x+=r
 		if position.y>1400: #Player loose
-			adMob.show_banner()
+			#adMob.show_banner()
 			enemy.get_node("laugh").play()
 			enemy.get_node("flaoting").play("float and laugh")
 			enemy.play("Laugh")
