@@ -590,6 +590,7 @@ position = Vector2( 538.364, 382.589 )
 scale = Vector2( 0.447, 0.447 )
 frames = SubResource( 1 )
 animation = "idle"
+frame = 1
 playing = true
 
 [node name="flaoting" type="AnimationPlayer" parent="Gerry"]
@@ -780,7 +781,7 @@ position = Vector2( -4.426, 12.1388 )
 scale = Vector2( 0.137, 0.137 )
 frames = SubResource( 32 )
 animation = "l2"
-frame = 4
+frame = 2
 playing = true
 
 [node name="RacketSwoosh" type="AudioStreamPlayer2D" parent="player"]
@@ -846,7 +847,7 @@ margin_left = 155.798
 margin_top = 99.8964
 margin_right = 390.798
 margin_bottom = 198.896
-text = "VER 0.42
+text = "VER 0.43
 
 
 
