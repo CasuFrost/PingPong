@@ -2,7 +2,7 @@ extends Node2D
 onready var scia = get_parent().get_node("SciaPalla")
 onready var cloudyExp = get_parent().get_node("CloudyExplosion")
 onready var enemy = get_parent().get_node("Gerry")
-onready var adMob = get_parent().get_node("AdMob")
+#onready var adMob = get_parent().get_node("AdMob")
 var s=0
 var r=0
 var points = 0

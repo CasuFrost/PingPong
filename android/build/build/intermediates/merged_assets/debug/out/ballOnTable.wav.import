@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ballOnTable.wav-9f13e6fd99c96e458920fc5c1c11325b.sample"
+
+[deps]
+
+source_file="res://ballOnTable.wav"
+dest_files=[ "res://.import/ballOnTable.wav-9f13e6fd99c96e458920fc5c1c11325b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

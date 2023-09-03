@@ -4,10 +4,14 @@ var pause = false
 var colorSkye : Color = Color(0.6,0.8,0.8,1)
 var colorSkyeDark : Color = Color(0.2,0.2,0.3,1)
 var colorSelector=1
-onready var adMob = $AdMob
+#onready var adMob = $AdMob
 var dir =str(OS.get_user_data_dir())+"/game_save.tres"
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#$"LoseMenù/ColorRect/reward test".disabled=true
+	#MobileAds.connect("initialization_complete",self,"_on_MobileAds_initialization_complete")
+	#MobileAds.connect("interstitial_loaded",self,"_on_MobileAds_interstitial_loaded")
+	#MobileAds.connect("rewarded_ad_loaded",self,"_on_MobileAds_rewarded_ad_loaded")
 	
 	get_node("LoseMenù").visible=false
 	$player/demoAsset.material.set_shader_param("color",Color(0.5,0.5,1))
@@ -72,3 +76,17 @@ func _on_Timer_timeout():
 func _on_Gerry_animation_finished():
 	if !$"LoseMenù".visible:
 		$Gerry.play("idle")
+
+
+func _on_reward_test_button_down():
+	MobileAds.show_interstitial()
+	
+func _on_MobileAds_interstitial_loaded():
+	$"LoseMenù/ColorRect/reward test".disabled=false
+func _on_MobileAds_initialization_complete(status,adapter_name):
+	if status == MobileAds.INITIALIZATION_STATUS_READY:
+		MobileAds.load_banner()
+		MobileAds.load_interstitial()
+		MobileAds.load_rewarded()
+func _on_MobileAds_rewarded_ad_loaded():
+	$"LoseMenù/ColorRect/reward test".disabled=false
